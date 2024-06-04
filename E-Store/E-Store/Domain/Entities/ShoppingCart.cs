@@ -14,12 +14,12 @@ public class ShoppingCart : AuditableBaseEntity<Guid>
         UserId = userId;
     }
 
-    private static ShoppingCart Create(Guid userId, List<CartItem> items)
+    public static ShoppingCart Create(Guid userId, List<CartItem> items)
     {
         ShoppingCart newCart = new ShoppingCart(Guid.NewGuid(), userId);
         items.ForEach(item =>
         {
-            newCart.Total += item.Product.Price;
+            newCart.Total += item.Total;
         });
         newCart.CartItems = items;
 

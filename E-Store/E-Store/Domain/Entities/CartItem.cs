@@ -4,21 +4,25 @@ namespace E_Store.Domain.Entities;
 
 public class CartItem
 {
-    public Guid Id { get; set; }
-    public int Quantity { get; set; }
-    public Guid ProductId { get; set; }
-    public Product Product { get; set; }
+    public Guid Id { get; private set; }
+    public string Name { get; private set; }
+    public decimal Total { get; private set; }
+    public int Quantity { get; private set; }
+    public Guid ProductId { get; private set; }
+    public Product Product { get; private set; }
 
-    private CartItem(Guid id, int quantity, Guid productId)
+    private CartItem(Guid id, string name, decimal total, int quantity, Guid productId)
     {
         Id = id;
+        Name = name;
         Quantity = quantity;
         ProductId = productId;
     }
 
-    public static CartItem Create(int quantity, Guid productId)
+    public static CartItem Create(string name, decimal price, int quantity, Guid productId)
     {
-        return new CartItem(Guid.NewGuid(), quantity, productId);
+        decimal total = price * quantity;
+        return new CartItem(Guid.NewGuid(), name, total, quantity, productId);
     }
 
     public void Update(string quantity)

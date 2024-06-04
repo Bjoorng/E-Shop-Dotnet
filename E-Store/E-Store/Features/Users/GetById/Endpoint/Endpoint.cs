@@ -5,7 +5,7 @@ using FastEndpoints;
 
 namespace E_Store.Features.Users.GetById.Endpoint
 {
-    public class Endpoint(ApplicationDbContext context) : Endpoint<Request, Response>
+    public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) : Endpoint<Request, Response>
     {
         public override void Configure()
         {
@@ -22,7 +22,9 @@ namespace E_Store.Features.Users.GetById.Endpoint
                 await SendNoContentAsync(ct);
             }
 
-            await SendAsync(new Response(user.Id, user.Username,  user.Password), cancellation: ct);
+            Response res = mapper.Map<Response>(user);
+
+            await SendAsync(res, cancellation: ct);
         }
     }
 }

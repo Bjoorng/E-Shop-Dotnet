@@ -156,3 +156,4 @@ C:\Users\total\source\repos\E-Store\E-Store\obj\Debug\net8.0\refint\E-Store.dll
 C:\Users\total\source\repos\E-Store\E-Store\obj\Debug\net8.0\E-Store.pdb
 C:\Users\total\source\repos\E-Store\E-Store\obj\Debug\net8.0\E-Store.genruntimeconfig.cache
 C:\Users\total\source\repos\E-Store\E-Store\obj\Debug\net8.0\ref\E-Store.dll
+C:\Users\total\source\repos\E-Store\E-Store\obj\Debug\net8.0\E-Store.sourcelink.json

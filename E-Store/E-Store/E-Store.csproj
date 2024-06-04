@@ -36,16 +36,8 @@
     <Folder Include="Features\Orders\GetByUserId\Model\" />
     <Folder Include="Features\Orders\Update\Endpoint\" />
     <Folder Include="Features\Orders\Update\Model\" />
-    <Folder Include="Features\Products\GetById\Endpoint\" />
-    <Folder Include="Features\Products\Update\Endpoint\" />
-    <Folder Include="Features\ShoppingCarts\Create\Endpoint\" />
-    <Folder Include="Features\ShoppingCarts\Create\Model\" />
     <Folder Include="Features\ShoppingCarts\Delete\Endpoint\" />
     <Folder Include="Features\ShoppingCarts\Delete\Model\" />
-    <Folder Include="Features\ShoppingCarts\GetAll\Endpoint\" />
-    <Folder Include="Features\ShoppingCarts\GetAll\Model\" />
-    <Folder Include="Features\ShoppingCarts\GetByUserId\Endpoint\" />
-    <Folder Include="Features\ShoppingCarts\GetByUserId\Model\" />
     <Folder Include="Features\ShoppingCarts\Update\Endpoint\" />
     <Folder Include="Features\ShoppingCarts\Update\Model\" />
   </ItemGroup>
