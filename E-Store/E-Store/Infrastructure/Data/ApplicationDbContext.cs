@@ -9,7 +9,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Store> Stores => Set<Store>();
     public DbSet<ShoppingCart> ShoppingCarts => Set<ShoppingCart>();
-    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<ShopOrder> Orders => Set<ShopOrder>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

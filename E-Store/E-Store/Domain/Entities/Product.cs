@@ -78,4 +78,13 @@ public class Product : AuditableBaseEntity<Guid>
         }
     }
 
+    public void UpdateQuantityOnOrderCreate(int quantity) 
+    {
+        Quantity = Quantity - quantity;
+    }
+
+    public void UpdateQuantityOnOrderDelete(int quantity)
+    {
+        Quantity = Quantity + quantity;
+    }
 }

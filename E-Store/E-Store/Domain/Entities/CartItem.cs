@@ -14,6 +14,7 @@ public class CartItem
     private CartItem(Guid id, string name, decimal total, int quantity, Guid productId)
     {
         Id = id;
+        Total = total;
         Name = name;
         Quantity = quantity;
         ProductId = productId;

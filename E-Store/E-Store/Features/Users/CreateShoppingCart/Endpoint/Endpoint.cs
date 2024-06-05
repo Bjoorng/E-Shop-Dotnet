@@ -9,11 +9,18 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
 {
     public override void Configure()
     {
-        Post("/api/{UserId}/shoppingcarts");
+        Post("/api/users/{UserId}/shoppingcarts");
         AllowAnonymous();
     }
     public override async Task HandleAsync(Request req, CancellationToken ct)
     {
+        AppUser? user = await context.Users.FindAsync(req.UserId);
+
+        if (user == null)
+        {
+            await SendNotFoundAsync(ct);
+        }
+
         List<CartItem> items = new();
         req.CartItems.ForEach(item =>
         {
@@ -22,6 +29,8 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
         });
 
         ShoppingCart cart = ShoppingCart.Create(req.UserId, items);
+        cart.CreatedBy = user.Username;
+        cart.CreatedIn = DateTimeOffset.UtcNow;
 
         Response res = mapper.Map<Response>(cart);
 

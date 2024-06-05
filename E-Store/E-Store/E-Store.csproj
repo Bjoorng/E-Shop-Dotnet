@@ -26,18 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Orders\Create\Endpoint\" />
-    <Folder Include="Features\Orders\Create\Model\" />
-    <Folder Include="Features\Orders\Delete\Endpoint\" />
-    <Folder Include="Features\Orders\Delete\Model\" />
     <Folder Include="Features\Orders\GetAll\Endpoint\" />
     <Folder Include="Features\Orders\GetAll\Model\" />
     <Folder Include="Features\Orders\GetByUserId\Endpoint\" />
     <Folder Include="Features\Orders\GetByUserId\Model\" />
     <Folder Include="Features\Orders\Update\Endpoint\" />
     <Folder Include="Features\Orders\Update\Model\" />
-    <Folder Include="Features\ShoppingCarts\Delete\Endpoint\" />
-    <Folder Include="Features\ShoppingCarts\Delete\Model\" />
     <Folder Include="Features\ShoppingCarts\Update\Endpoint\" />
     <Folder Include="Features\ShoppingCarts\Update\Model\" />
   </ItemGroup>

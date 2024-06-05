@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240604084037_DbFix")]
-    partial class DbFix
+    [Migration("20240604235921_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,60 +54,34 @@ namespace E_Store.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<Guid?>("ShopOrderId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("ShoppingCartId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
+                    b.HasIndex("ShopOrderId");
+
                     b.HasIndex("ShoppingCartId");
 
                     b.ToTable("CartItem");
-                });
-
-            modelBuilder.Entity("E_Store.Domain.Entities.Order", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset>("CreatedIn")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("ModifiedIn")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("OrderNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("ShoppingCartId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ShoppingCartId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("E_Store.Domain.Entities.Product", b =>
@@ -128,7 +102,6 @@ namespace E_Store.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ModifiedBy")
@@ -159,6 +132,42 @@ namespace E_Store.Migrations
                     b.HasIndex("StoreId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("E_Store.Domain.Entities.ShopOrder", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("CreatedIn")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("ModifiedIn")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("OrderNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("E_Store.Domain.Entities.ShoppingCart", b =>
@@ -234,30 +243,15 @@ namespace E_Store.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("E_Store.Domain.Entities.ShopOrder", null)
+                        .WithMany("CartItems")
+                        .HasForeignKey("ShopOrderId");
+
                     b.HasOne("E_Store.Domain.Entities.ShoppingCart", null)
                         .WithMany("CartItems")
                         .HasForeignKey("ShoppingCartId");
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("E_Store.Domain.Entities.Order", b =>
-                {
-                    b.HasOne("E_Store.Domain.Entities.ShoppingCart", "ShoppingCart")
-                        .WithMany()
-                        .HasForeignKey("ShoppingCartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("E_Store.Domain.Entities.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ShoppingCart");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("E_Store.Domain.Entities.Product", b =>
@@ -269,6 +263,17 @@ namespace E_Store.Migrations
                         .IsRequired();
 
                     b.Navigation("Store");
+                });
+
+            modelBuilder.Entity("E_Store.Domain.Entities.ShopOrder", b =>
+                {
+                    b.HasOne("E_Store.Domain.Entities.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("E_Store.Domain.Entities.ShoppingCart", b =>
@@ -291,6 +296,11 @@ namespace E_Store.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("E_Store.Domain.Entities.ShopOrder", b =>
+                {
+                    b.Navigation("CartItems");
                 });
 
             modelBuilder.Entity("E_Store.Domain.Entities.ShoppingCart", b =>
