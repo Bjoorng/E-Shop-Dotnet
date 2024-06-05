@@ -1,4 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using System.Numerics;
+using System.Text.Json.Serialization;
 
 namespace E_Store.Domain.Entities;
 
@@ -15,6 +17,15 @@ public class CartItem
     public Guid? OrderId { get; private set; }
     public ShopOrder ShopOrder { get; private set; }
 
+    private CartItem(Guid id, string name, int quantity, Guid productId)
+    {
+        Id = id;
+        Name = name;
+        Quantity = quantity;
+        ProductId = productId;
+    }
+
+    [JsonConstructor]
     private CartItem(Guid id, string name, decimal total, int quantity, Guid productId)
     {
         Id = id;
@@ -26,17 +37,25 @@ public class CartItem
 
     public static CartItem Create(string name, decimal price, int quantity, Guid productId)
     {
-        decimal total = price * quantity;
-        return new CartItem(Guid.NewGuid(), name, total, quantity, productId);
+        CartItem cartItem = new CartItem(Guid.NewGuid(), name, quantity, productId);
+        cartItem.CalculateTotal(price, quantity);
+        return cartItem;
     }
 
     public void UpdateQuantityMore(int quantity)
     {
-        Quantity = Quantity - quantity;
+
+        Quantity = Quantity + quantity;
     }
 
     public void UpdateQuantityLess(int quantity)
     {
-        Quantity = Quantity + quantity;
+        Quantity = Quantity - quantity;
+    }
+
+    public decimal CalculateTotal(decimal price, int quantity)
+    {
+        Total = price * quantity;
+        return Total;
     }
 }

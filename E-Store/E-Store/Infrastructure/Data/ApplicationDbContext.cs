@@ -9,6 +9,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<AppUser> Users => Set<AppUser>();
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Store> Stores => Set<Store>();
+    public DbSet<CartItem> CartItems => Set<CartItem>();
     public DbSet<ShoppingCart> ShoppingCarts => Set<ShoppingCart>();
     public DbSet<ShopOrder> Orders => Set<ShopOrder>();
 
