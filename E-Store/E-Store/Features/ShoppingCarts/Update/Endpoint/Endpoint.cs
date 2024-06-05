@@ -24,28 +24,28 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
 
         CartItem? item = cart.CartItems.FirstOrDefault(x => x.Id == req.CartItemId);
 
-        if (item == null) 
+        if (item == null)
         {
             await SendNotFoundAsync(ct);
         }
 
         decimal price = item.Total / item.Quantity;
 
-        if(req.Condition.ToUpper().Equals("REMOVE"))
+        if (req.Condition.ToUpper().Equals("REMOVE"))
         {
             item.UpdateQuantityLess(req.Quantity);
-            if(item.Quantity > 0)
+            if (item.Quantity > 0)
             {
                 item.CalculateTotal(price, item.Quantity);
                 context.CartItems.Update(item);
             }
-            else if(req.Condition.ToUpper().Equals("ADD"))
+            else
             {
                 context.CartItems.Remove(item);
             }
             await context.SaveChangesAsync(ct);
         }
-        else
+        else if (req.Condition.ToUpper().Equals("ADD"))
         {
             item.UpdateQuantityMore(req.Quantity);
             item.CalculateTotal(price, item.Quantity);
@@ -53,7 +53,14 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
             await context.SaveChangesAsync(ct);
         }
 
-        cart.CalculateTotal(cart.CartItems);
+        if (cart.CartItems.Count > 0)
+        {
+            cart.CalculateTotal(cart.CartItems);
+        }
+        else
+        {
+            context.ShoppingCarts.Remove(cart);
+        }
 
         await context.SaveChangesAsync(ct);
 
