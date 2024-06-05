@@ -27,9 +27,9 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
         order.CreatedBy = user.Username;
         order.CreatedIn = DateTimeOffset.UtcNow;
 
-        order.CartItems.ForEach(async item =>
+        order.CartItems.ForEach(item =>
         {
-            Product? product = await context.Products.FindAsync(item.ProductId);
+            Product? product = context.Products.Find(item.ProductId);
             product.UpdateQuantityOnOrderCreate(item.Quantity);
         });
 

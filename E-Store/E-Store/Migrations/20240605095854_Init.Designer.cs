@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Store.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240604235921_Init")]
+    [Migration("20240605095854_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -58,14 +58,14 @@ namespace E_Store.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
-
-                    b.Property<Guid?>("ShopOrderId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("ShoppingCartId")
                         .HasColumnType("uniqueidentifier");
@@ -75,9 +75,9 @@ namespace E_Store.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("OrderId");
 
-                    b.HasIndex("ShopOrderId");
+                    b.HasIndex("ProductId");
 
                     b.HasIndex("ShoppingCartId");
 
@@ -237,21 +237,27 @@ namespace E_Store.Migrations
 
             modelBuilder.Entity("E_Store.Domain.Entities.CartItem", b =>
                 {
+                    b.HasOne("E_Store.Domain.Entities.ShopOrder", "ShopOrder")
+                        .WithMany("CartItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("E_Store.Domain.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("CartItems")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("E_Store.Domain.Entities.ShopOrder", null)
+                    b.HasOne("E_Store.Domain.Entities.ShoppingCart", "ShoppingCart")
                         .WithMany("CartItems")
-                        .HasForeignKey("ShopOrderId");
-
-                    b.HasOne("E_Store.Domain.Entities.ShoppingCart", null)
-                        .WithMany("CartItems")
-                        .HasForeignKey("ShoppingCartId");
+                        .HasForeignKey("ShoppingCartId")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Product");
+
+                    b.Navigation("ShopOrder");
+
+                    b.Navigation("ShoppingCart");
                 });
 
             modelBuilder.Entity("E_Store.Domain.Entities.Product", b =>
@@ -296,6 +302,11 @@ namespace E_Store.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("E_Store.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("CartItems");
                 });
 
             modelBuilder.Entity("E_Store.Domain.Entities.ShopOrder", b =>

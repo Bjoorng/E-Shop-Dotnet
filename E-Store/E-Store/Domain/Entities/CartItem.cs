@@ -10,6 +10,10 @@ public class CartItem
     public int Quantity { get; private set; }
     public Guid ProductId { get; private set; }
     public Product Product { get; private set; }
+    public Guid? ShoppingCartId { get; private set; }
+    public ShoppingCart ShoppingCart { get; private set; }
+    public Guid? OrderId { get; private set; }
+    public ShopOrder ShopOrder { get; private set; }
 
     private CartItem(Guid id, string name, decimal total, int quantity, Guid productId)
     {
@@ -26,11 +30,13 @@ public class CartItem
         return new CartItem(Guid.NewGuid(), name, total, quantity, productId);
     }
 
-    public void Update(string quantity)
+    public void UpdateQuantityMore(int quantity)
     {
-        if(!quantity.IsNullOrEmpty() && int.TryParse(quantity, out int parsedQuantity))
-        {
-            Quantity = parsedQuantity;
-        }
+        Quantity = Quantity - quantity;
+    }
+
+    public void UpdateQuantityLess(int quantity)
+    {
+        Quantity = Quantity + quantity;
     }
 }

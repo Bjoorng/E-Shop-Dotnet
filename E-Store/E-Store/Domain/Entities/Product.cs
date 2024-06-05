@@ -14,6 +14,7 @@ public class Product : AuditableBaseEntity<Guid>
     public string Category { get; private set; }
     public Guid StoreId { get; private set; }
     public Store Store { get; private set; }
+    public List<CartItem> CartItems { get; private set; }
 
     private Product(Guid id, string name, string summary, int quantity, decimal price, string category, Guid storeId) : base(id)
     {

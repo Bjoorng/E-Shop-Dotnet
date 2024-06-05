@@ -22,9 +22,9 @@ public class Endpoint(ApplicationDbContext context) : Endpoint<Request, EmptyRes
             await SendNotFoundAsync(ct);
         }
 
-        order.CartItems.ForEach(async item =>
+        order.CartItems.ForEach(item =>
         {
-            Product? product = await context.Products.FindAsync(item.ProductId);
+            Product? product = context.Products.Find(item.ProductId);
             product.UpdateQuantityOnOrderDelete(item.Quantity);
         });
 

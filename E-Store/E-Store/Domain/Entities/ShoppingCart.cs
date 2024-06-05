@@ -28,11 +28,18 @@ public class ShoppingCart : AuditableBaseEntity<Guid>
     {
         ShoppingCart newCart = new ShoppingCart(Guid.NewGuid(), userId);
         newCart.CartItems = items;
-        items.ForEach(item =>
-        {
-            newCart.Total += item.Total;
-        });
+        newCart.CalculateTotal(items);
 
         return newCart;
+    }
+
+    public decimal CalculateTotal(List<CartItem> items) 
+    {
+        Total = 0;
+        items.ForEach(item =>
+        {
+            Total += item.Total;
+        });
+        return Total;
     }
 }

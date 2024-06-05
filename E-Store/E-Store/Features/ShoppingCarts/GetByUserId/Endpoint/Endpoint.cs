@@ -15,7 +15,7 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
     }
     public override async Task HandleAsync(Request req, CancellationToken ct)
     {
-        ShoppingCart? cart = await context.ShoppingCarts.FirstOrDefaultAsync(x => x.UserId == req.UserId);
+        ShoppingCart? cart = await context.ShoppingCarts.Include(x => x.CartItems).FirstOrDefaultAsync(x => x.UserId == req.UserId);
 
         if (cart == null) 
         {
@@ -23,13 +23,6 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
         }
 
         Response res = mapper.Map<Response>(cart);
-
-        cart.CartItems.ForEach(item =>
-        {
-            CartItemResponse resItem = mapper.Map<CartItemResponse>(item);
-            res.Items.Add(resItem);
-        });
-
 
         await SendAsync(res, cancellation: ct);
     }

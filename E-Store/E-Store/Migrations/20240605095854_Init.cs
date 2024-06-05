@@ -132,15 +132,15 @@ namespace E_Store.Migrations
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ShopOrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    ShoppingCartId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    ShoppingCartId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CartItem", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CartItem_Orders_ShopOrderId",
-                        column: x => x.ShopOrderId,
+                        name: "FK_CartItem_Orders_OrderId",
+                        column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -148,25 +148,23 @@ namespace E_Store.Migrations
                         name: "FK_CartItem_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_CartItem_ShoppingCarts_ShoppingCartId",
                         column: x => x.ShoppingCartId,
                         principalTable: "ShoppingCarts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        principalColumn: "Id");
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CartItem_OrderId",
+                table: "CartItem",
+                column: "OrderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CartItem_ProductId",
                 table: "CartItem",
                 column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CartItem_ShopOrderId",
-                table: "CartItem",
-                column: "ShopOrderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CartItem_ShoppingCartId",
