@@ -10,7 +10,7 @@ public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) :
 {
     public override void Configure()
     {
-        Get("api/users/login");
+        Post("api/users/login");
         AllowAnonymous();
     }
 

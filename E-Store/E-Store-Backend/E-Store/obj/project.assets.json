@@ -5384,11 +5384,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\E-Store.csproj",
+      "projectUniqueName": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\E-Store.csproj",
       "projectName": "E-Store",
-      "projectPath": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\E-Store.csproj",
+      "projectPath": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\E-Store.csproj",
       "packagesPath": "C:\\Users\\total\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\obj\\",
+      "outputPath": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\total\\AppData\\Roaming\\NuGet\\NuGet.Config",

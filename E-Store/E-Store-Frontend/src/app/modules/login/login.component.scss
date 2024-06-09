@@ -1,0 +1,24 @@
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .login-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #545454;
+    border-radius: 15px;
+    .title{
+      font-size: 2rem;
+      margin-bottom: 32px;
+      color: #FFF0EB;
+    }
+    .username, .password{
+      width: 100%;
+    }
+  }
+}

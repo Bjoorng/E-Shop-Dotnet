@@ -1,25 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\total\\source\\repos\\E-Store\\",
+  "WorkspaceRootPath": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store\\features\\shoppingcarts\\update\\endpoint\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store-backend\\e-store\\features\\users\\login\\endpoint\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\features\\users\\login\\endpoint\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store-backend\\e-store\\features\\shoppingcarts\\update\\endpoint\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\features\\shoppingcarts\\update\\endpoint\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store-backend\\e-store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store\\domain\\entities\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\domain\\entities\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store-backend\\e-store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store\\domain\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store-backend\\e-store\\consts\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\consts\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store-backend\\e-store\\domain\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\domain\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store\\features\\shoppingcarts\\update\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|c:\\users\\total\\source\\repos\\e-store\\e-store-backend\\e-store\\features\\shoppingcarts\\update\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17A06495-2099-497A-98B6-9446C4A0554C}|E-Store\\E-Store.csproj|solutionrelative:e-store\\features\\shoppingcarts\\update\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,35 +46,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "E-Store\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "E-Store\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T19:03:58.04Z"
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\appsettings.json",
+              "RelativeDocumentMoniker": "E-Store\\appsettings.json",
+              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\appsettings.json",
+              "RelativeToolTip": "E-Store\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-07T21:13:19.223Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ShoppingCart.cs",
-              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Domain\\Entities\\ShoppingCart.cs",
-              "RelativeDocumentMoniker": "E-Store\\Domain\\Entities\\ShoppingCart.cs",
-              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Domain\\Entities\\ShoppingCart.cs",
-              "RelativeToolTip": "E-Store\\Domain\\Entities\\ShoppingCart.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAcwBIAAAAVAAAA",
+              "DocumentIndex": 0,
+              "Title": "Endpoint.cs",
+              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Features\\Users\\Login\\Endpoint\\Endpoint.cs",
+              "RelativeDocumentMoniker": "E-Store\\Features\\Users\\Login\\Endpoint\\Endpoint.cs",
+              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Features\\Users\\Login\\Endpoint\\Endpoint.cs",
+              "RelativeToolTip": "E-Store\\Features\\Users\\Login\\Endpoint\\Endpoint.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T18:53:52.956Z"
+              "WhenOpened": "2024-06-07T11:43:04.442Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Program.cs",
+              "RelativeDocumentMoniker": "E-Store\\Program.cs",
+              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Program.cs",
+              "RelativeToolTip": "E-Store\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAcwA8AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T11:31:49.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Consts\\Constants.cs",
+              "RelativeDocumentMoniker": "E-Store\\Consts\\Constants.cs",
+              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Consts\\Constants.cs",
+              "RelativeToolTip": "E-Store\\Consts\\Constants.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T11:31:42.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CartItem.cs",
-              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Domain\\Entities\\CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Domain\\Entities\\CartItem.cs",
               "RelativeDocumentMoniker": "E-Store\\Domain\\Entities\\CartItem.cs",
-              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Domain\\Entities\\CartItem.cs",
+              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Domain\\Entities\\CartItem.cs",
               "RelativeToolTip": "E-Store\\Domain\\Entities\\CartItem.cs",
               "ViewState": "AQIAACUAAAAAAAAAAIAzwCoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -74,24 +110,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Endpoint.cs",
-              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Features\\ShoppingCarts\\Update\\Endpoint\\Endpoint.cs",
+              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Features\\ShoppingCarts\\Update\\Endpoint\\Endpoint.cs",
               "RelativeDocumentMoniker": "E-Store\\Features\\ShoppingCarts\\Update\\Endpoint\\Endpoint.cs",
-              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Features\\ShoppingCarts\\Update\\Endpoint\\Endpoint.cs",
+              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Features\\ShoppingCarts\\Update\\Endpoint\\Endpoint.cs",
               "RelativeToolTip": "E-Store\\Features\\ShoppingCarts\\Update\\Endpoint\\Endpoint.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowD0AAAAvAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAD0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T18:12:25.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Features\\ShoppingCarts\\Update\\Model\\Model.cs",
+              "DocumentMoniker": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Features\\ShoppingCarts\\Update\\Model\\Model.cs",
               "RelativeDocumentMoniker": "E-Store\\Features\\ShoppingCarts\\Update\\Model\\Model.cs",
-              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store\\Features\\ShoppingCarts\\Update\\Model\\Model.cs",
+              "ToolTip": "C:\\Users\\total\\source\\repos\\E-Store\\E-Store-Backend\\E-Store\\Features\\ShoppingCarts\\Update\\Model\\Model.cs",
               "RelativeToolTip": "E-Store\\Features\\ShoppingCarts\\Update\\Model\\Model.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
