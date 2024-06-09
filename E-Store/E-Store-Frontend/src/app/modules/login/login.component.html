@@ -1,34 +1,35 @@
 <div class="background">
   <div class="container">
+    <div class="title">Login to your account</div>
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <p class="title">Login to your account</p>
       <mat-form-field class="username">
-        <mat-label>Username</mat-label>
+        <mat-label class="login-label">Username</mat-label>
         <input
           matInput
           formControlName="username"
           name="username"
           autocomplete="username"
+          class="login-input"
         />
       </mat-form-field>
       <mat-form-field class="password">
-        <mat-label>Password</mat-label>
+        <mat-label class="login-label">Password</mat-label>
         <input
           matInput
           formControlName="password"
           name="password"
           [type]="hide ? 'password' : 'text'"
           autocomplete="new-password"
+          class="login-input"
         />
       </mat-form-field>
       <button
         mat-raised-button
         color="accent"
-        class="button-action login"
+        class="button-action login-button"
       >
         Login
       </button>
     </form>
   </div>
 </div>
-
