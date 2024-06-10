@@ -1,0 +1,59 @@
+.navbar {
+  background-color: #a2afb6;
+  color: #fff0eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  .logo,
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  .search-container {
+    display: flex;
+    align-items: stretch;
+    .search-form {
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+      .search-field {
+        border: 1px solid #aaa;
+        width: 1100px;
+        .search-label {
+          color: #262626;
+        }
+        .search-input {
+          color: #262626;
+        }
+      }
+      .search-button {
+        background-color: #fff3c8;
+        color: #262626;
+        height: 100%;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-style: solid;
+        border-color: #aaa;
+        border-width: 1px 1px 1px 0px;
+      }
+    }
+  }
+}
+
+::ng-deep .navbar {
+  .mat-mdc-text-field-wrapper {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+  .mdc-text-field {
+    background-color: #fbf6f4 !important;
+  }
+}

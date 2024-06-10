@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Subscription } from 'rxjs';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -52,9 +51,9 @@ export class LoginComponent {
           this.loginSVC.setSessionUser(res?.username, res?.role);
           if(res?.role == 'ADMIN'){
             console.log('ADMIN');
-            //this.router.navigate(['/gestionale/utenti']);
+            //this.router.navigate(['//']);
           }
-          //this.router.navigate(['/home']);
+          //this.router.navigate(['/']);
         },
         error: (error) => {
           console.log('ERROR');

@@ -1,0 +1,39 @@
+<mat-toolbar class="navbar">
+  <div class="logo">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+  </div>
+  <div class="search-container">
+    <form class="search-form" [formGroup]="searchForm">
+      <mat-form-field class="search-field">
+          <mat-label class="search-label">Search...</mat-label>
+          <input
+            matInput
+            formControlName="search"
+            name="search"
+            autocomplete="search"
+            class="search-input"
+          />
+        </mat-form-field>
+        <button
+        mat-button
+        class="example-icon button-action search-button"
+        color="accent"
+        aria-label="icon-button"
+      >
+      <i class="material-icons">search</i>
+      </button>
+    </form>
+  </div>
+  <div class="profile">
+    <button mat-icon-button class="example-icon" aria-label="icon-button">
+      <i class="material-icons">account_circle</i>
+    </button>
+  </div>
+</mat-toolbar>

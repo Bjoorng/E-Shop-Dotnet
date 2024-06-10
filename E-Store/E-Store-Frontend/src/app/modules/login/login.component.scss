@@ -3,9 +3,12 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  position: relative;
   .container {
     border-radius: 15px;
     box-shadow: 1px 1px 15px #a2afb6;
+    position: absolute;
+    top: 200px;
     .title {
       font-size: 2rem;
       color: #fff0eb;
@@ -43,13 +46,15 @@
         font-size: 1.3rem;
         border: 2px solid #aaa;
         box-shadow: 1px 1px 10px #a2afb6;
-        color: #262626;
+        color: #fff0eb;
       }
     }
   }
 }
 
-::ng-deep .mdc-text-field {
-  background-color: #fbf6f4 !important;
-  border: 2px inset #a2afb6;
+::ng-deep .background {
+  .mdc-text-field {
+    background-color: #fbf6f4 !important;
+    border: 2px inset #a2afb6;
+  }
 }
