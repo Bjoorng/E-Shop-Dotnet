@@ -48,8 +48,8 @@ export class LoginComponent {
     if(this.loginForm.valid){
       this.loginSVC.login(this.loginForm.value).subscribe({
         next: (res) => {
-          this.loginSVC.setSessionUser(res?.username, res?.role);
-          if(res?.role == 'ADMIN'){
+          this.loginSVC.setSessionUser(res?.Username, res?.Role);
+          if(res?.Role == 'ADMIN'){
             console.log('ADMIN');
             //this.router.navigate(['//']);
           }

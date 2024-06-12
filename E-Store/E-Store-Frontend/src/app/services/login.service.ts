@@ -22,8 +22,8 @@ updateSessionUser: Subject<ISessionUser> = new Subject<ISessionUser>();
     return this.http.post<ILoginResponse>(this.baseUrl+'users/login', payload);
   }
 
-  setSessionUser(username: string, role: string): void {
-    const loggedUser = { username, role };
+  setSessionUser(Username: string, Role: string): void {
+    const loggedUser = { Username, Role };
     localStorage.setItem(
       'sessionUser',
       JSON.stringify(loggedUser)
