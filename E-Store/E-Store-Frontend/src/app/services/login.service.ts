@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ILoginRequest, ILoginResponse, ISessionUser } from '../models/ILogin';
 import { Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Guid } from 'guid-typescript';
 
 @Injectable({
   providedIn: 'root'
