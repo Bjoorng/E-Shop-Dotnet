@@ -15,7 +15,7 @@ public class Endpoint(ApplicationDbContext context) : Endpoint<Request, Response
 
     public override async Task HandleAsync(Request req, CancellationToken ct)
     {
-        AppUser user = AppUser.Create(req.Username, req.Password, req.Role);
+        AppUser user = AppUser.Create(req.Email, req.Username, req.Password, req.Role);
 
         await context.Users.AddAsync(user);
         await context.SaveChangesAsync(ct);

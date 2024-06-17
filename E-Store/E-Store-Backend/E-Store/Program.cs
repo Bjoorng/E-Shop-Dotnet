@@ -3,14 +3,27 @@ using E_Store.Infrastructure.Data;
 using FastEndpoints;
 using FastEndpoints.Swagger;
 using Microsoft.EntityFrameworkCore;
- using System.Reflection;
+using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//var bytes = Encoding.UTF8.GetBytes(builder.Configuration["Authentication:JwtSecret"]!);
+
 builder.Services.AddControllers();
 builder.Services.AddControllers().AddNewtonsoftJson();
+//builder.Services.AddAuthentication().AddJwtBearer(options =>
+//    options.TokenValidationParameters = new TokenValidationParameters
+//    {
+//        ValidateIssuerSigningKey = true,
+//        IssuerSigningKey = new SymmetricSecurityKey(bytes),
+//        ValidAudience = builder.Configuration["Authentication:ValidAudience"],
+//        ValidIssuer = builder.Configuration["Authentication:ValidIssuer"]
+//    }
+//);
 builder.Services.AddCors(options =>
 {
     var origins = builder.Configuration.GetValue<string>("Cors:WithOrigins")?.Split(";") ?? Array.Empty<string>();

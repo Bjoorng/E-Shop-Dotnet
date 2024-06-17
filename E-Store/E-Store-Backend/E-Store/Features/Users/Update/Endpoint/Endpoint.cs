@@ -22,7 +22,7 @@ public class Endpoint(ApplicationDbContext context) : Endpoint<Request, Response
             await SendNotFoundAsync(ct);
         }
 
-        user.UpdateUser(req.Username, req.Password);
+        user.UpdateUser(req.Email, req.Username, req.Password);
         await context.SaveChangesAsync();
 
         await SendAsync(new Response(user.Id, user.Username, user.Password), cancellation: ct);

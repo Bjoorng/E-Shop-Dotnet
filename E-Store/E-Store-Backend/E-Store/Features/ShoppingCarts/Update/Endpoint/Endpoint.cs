@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace E_Store.Features.ShoppingCarts.Update.Endpoint;
 
-public class Endpoint(ApplicationDbContext context, AutoMapper.IMapper mapper) : Endpoint<Request, EmptyResponse>
+public class Endpoint(ApplicationDbContext context) : Endpoint<Request, EmptyResponse>
 {
     public override void Configure()
     {
