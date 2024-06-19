@@ -12,36 +12,48 @@
   <div class="search-container">
     <form class="search-form" [formGroup]="searchForm">
       <mat-form-field class="search-field">
-          <mat-label class="search-label">Search...</mat-label>
-          <input
-            matInput
-            formControlName="search"
-            name="search"
-            autocomplete="search"
-            class="search-input"
-          />
-        </mat-form-field>
-        <button
+        <mat-label class="search-label">Search...</mat-label>
+        <input
+          matInput
+          formControlName="search"
+          name="search"
+          autocomplete="search"
+          class="search-input"
+        />
+      </mat-form-field>
+      <button
         mat-button
         class="example-icon button-action search-button"
         color="accent"
         aria-label="icon-button"
       >
-      <i class="material-icons">search</i>
+        <i class="material-icons">search</i>
       </button>
     </form>
   </div>
   <div class="profile">
-    <p>{{sessionUser.Username}}</p>
-    <button mat-icon-button class="example-icon" aria-label="icon-button" [matMenuTriggerFor]="menu">
-      <i class="material-icons">account_circle</i>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-      @if (sessionUser == null) {
-        <button mat-menu-item>Login</button>
-      }
-    </mat-menu>
+    @if (sessionUser == null) {
+    <div class="nav-buttons">
+      <button mat-raised-button class="login-button" (click)="goToLogin()">Login</button>
+      <button mat-raised-button class="signup-button">Signup</button>
+    </div>
+    }@else{
+    <div class="logged-user">
+      <div>{{ sessionUser.username }}</div>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="icon-button"
+        [matMenuTriggerFor]="menu"
+      >
+        <i class="material-icons">account_circle</i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </div>
+    }
   </div>
 </mat-toolbar>

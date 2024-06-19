@@ -10,6 +10,11 @@ export interface IStoreUpdateRequest {
   Name: String;
 }
 
+export interface IStoreGetAllResponse {
+  Id: Guid;
+  Name: string;
+}
+
 export interface IStoreByIdResponse {
   Id:Guid;
   Name: string;

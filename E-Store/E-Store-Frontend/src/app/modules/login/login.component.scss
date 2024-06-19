@@ -6,18 +6,15 @@
   position: relative;
   .container {
     border-radius: 15px;
-    box-shadow: 1px 1px 15px #a2afb6;
+    box-shadow: 1px 1px 15px #ffacac7d;
     position: absolute;
     top: 200px;
     .title {
       font-size: 2rem;
-      color: #fff0eb;
-      background-color: #a2afb6;
+      background-color: #ffacac7d;
       padding: 30px 20px 20px 20px;
       text-align: center;
       text-decoration: double;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
     }
     .login-form {
       width: 400px;
@@ -26,35 +23,23 @@
       justify-content: center;
       align-items: center;
       padding: 30px 20px 20px 20px;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      background-color: #fff0eb;
-      border: 2px solid #aaa;
       .username,
       .password {
         width: 100%;
-        color: #262626;
-        .login-label {
-          color: #262626;
-        }
-        .login-input {
-          color: #262626;
-        }
       }
       .login-button {
         padding: 20px 40px;
         font-size: 1.3rem;
         border: 2px solid #aaa;
-        box-shadow: 1px 1px 10px #a2afb6;
-        color: #fff0eb;
+        box-shadow: 1px 1px 10px #ffacac7d;
+        background-color: #ffacac7d;
       }
     }
   }
 }
 
-::ng-deep .background {
+::ng-deep .container{
   .mdc-text-field {
     background-color: #fbf6f4 !important;
-    border: 2px inset #a2afb6;
   }
 }

@@ -7,33 +7,41 @@ import { environment } from '../../environments/environment';
 import { Guid } from 'guid-typescript';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
 
-baseUrl: string = "http://localhost:5287/api/";
-updateSessionUser: Subject<ISessionUser> = new Subject<ISessionUser>();
+  baseUrl: string = "http://localhost:5287/api/";
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  updateSessionUser: Subject<ISessionUser> = new Subject<ISessionUser>();
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(payload: ILoginRequest): Observable<ILoginResponse> {
     this.clearStorage();
-    return this.http.post<ILoginResponse>(this.baseUrl+'users/login', payload);
+    return this.http.post<ILoginResponse>(
+      this.baseUrl + 'users/login',
+      payload
+    );
+  }
+
+  logout(): void {
+    this.clearStorage();
+    window.location.reload();
   }
 
   setSessionUser(Username: string, Role: string): void {
     const loggedUser = { Username, Role };
-    localStorage.setItem(
-      'sessionUser',
-      JSON.stringify(loggedUser)
-    );
+    localStorage.setItem('sessionUser', JSON.stringify(loggedUser));
     this.updateSessionUser.next(loggedUser);
     localStorage.setItem('logged', 'true');
   }
 
-  clearStorage(): void{
+  goToLogin(): void {
+    this.router.navigateByUrl('/login');
+  }
+
+  clearStorage(): void {
     localStorage.clear();
     sessionStorage.clear();
   }
