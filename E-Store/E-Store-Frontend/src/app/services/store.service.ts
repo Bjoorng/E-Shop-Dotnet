@@ -27,7 +27,7 @@ export class StoreService {
   }
 
   updateStore(store: IStoreByIdResponse): Observable<IStoreByIdResponse>{
-    return this.http.put<IStoreByIdResponse>(`${this.baseUrl}stores/${store.Id}`, store)
+    return this.http.put<IStoreByIdResponse>(`${this.baseUrl}stores/${store.id}`, store)
   }
 
   deleteStore(id: Guid): void {
