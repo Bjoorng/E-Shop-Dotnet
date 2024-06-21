@@ -1,47 +1,47 @@
 import { Guid } from "guid-typescript";
 
 export interface IProductIdRequest{
-  Id: Guid;
+  id: Guid;
 }
 
 export interface IProductCreateRequest{
-  Id: Guid;
-  Name: string;
-  Summary: string;
-  Quantity: number;
-  Price: number;
-  Category: string;
+  id: Guid;
+  name: string;
+  summary: string;
+  quantity: number;
+  price: number;
+  category: string;
 }
 
 export interface IProductUpdateRequest{
-  Id: Guid;
-  Name: string;
-  Summary: string;
-  Description: string;
-  Quantity: number;
-  Price: number;
-  Category: string;
+  id: Guid;
+  name: string;
+  summary: string;
+  description: string;
+  quantity: number;
+  price: number;
+  category: string;
 }
 
 export interface IProductGetAllResponse{
-  Id: Guid;
-  Name: string;
-  Summary: string;
-  Quantity: number;
-  Price: number;
-  Category: string;
-  StoreId: Guid;
+  id: Guid;
+  name: string;
+  summary: string;
+  quantity: number;
+  price: number;
+  category: string;
+  storeId: Guid;
 }
 
 export interface IProductIdResponse{
-  Id: Guid;
-  Name: string;
-  Summary: string;
-  Description?: string;
-  Quantity: number;
-  Price: number;
-  Category: string;
-  StoreId: Guid;
+  id: Guid;
+  name: string;
+  summary: string;
+  description?: string;
+  quantity: number;
+  price: number;
+  category: string;
+  storeId: Guid;
 }
 
 

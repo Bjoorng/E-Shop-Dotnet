@@ -26,6 +26,11 @@
       }
     }
   }
+  .logged-user{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
 
 ::ng-deep .navbar

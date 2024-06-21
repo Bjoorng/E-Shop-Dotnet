@@ -316,3 +316,4 @@ C:\Users\total\source\repos\E-Store\E-Store-Backend\E-Store\obj\Debug\net8.0\ref
 C:\Users\total\source\repos\E-Store\E-Store-Backend\E-Store\obj\Debug\net8.0\E-Store.pdb
 C:\Users\total\source\repos\E-Store\E-Store-Backend\E-Store\obj\Debug\net8.0\E-Store.genruntimeconfig.cache
 C:\Users\total\source\repos\E-Store\E-Store-Backend\E-Store\obj\Debug\net8.0\ref\E-Store.dll
+C:\Users\total\source\repos\E-Store\E-Store-Backend\E-Store\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

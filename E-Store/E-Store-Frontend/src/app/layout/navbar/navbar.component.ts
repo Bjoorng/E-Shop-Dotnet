@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ILoginResponse } from '../../models/ILogin';
+import { ILoginResponse, ISessionUser } from '../../models/ILogin';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
-  sessionUser: any;
+  sessionUser!: ISessionUser;
   searchForm: FormGroup;
 
   constructor(
@@ -24,7 +24,8 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sessionUser = JSON.parse(localStorage.getItem('sessionUser')!);
+    this.sessionUser = this.loginSVC.getSessionUser();
+    console.log(this.sessionUser);
   }
 
   logout(): void{

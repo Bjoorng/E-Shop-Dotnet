@@ -11,17 +11,17 @@ import { Guid } from 'guid-typescript';
 })
 export class LoginService {
 
-  baseUrl: string = "http://localhost:5287/api/";
+  baseUrl: string = environment.baseUrl;
 
   updateSessionUser: Subject<ISessionUser> = new Subject<ISessionUser>();
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(payload: ILoginRequest): Observable<ILoginResponse> {
+  login(user: ILoginRequest): Observable<ILoginResponse> {
     this.clearStorage();
     return this.http.post<ILoginResponse>(
       this.baseUrl + 'users/login',
-      payload
+      user
     );
   }
 
@@ -30,11 +30,17 @@ export class LoginService {
     window.location.reload();
   }
 
-  setSessionUser(Username: string, Role: string): void {
-    const loggedUser = { Username, Role };
+  setSessionUser(id: Guid, username: string, role: string): void {
+    const loggedUser = { id, username, role };
     localStorage.setItem('sessionUser', JSON.stringify(loggedUser));
     this.updateSessionUser.next(loggedUser);
     localStorage.setItem('logged', 'true');
+  }
+
+  getSessionUser(): any {
+    if (localStorage.getItem('sessionUser')) {
+      return JSON.parse(localStorage.getItem('sessionUser')!);
+    }
   }
 
   goToLogin(): void {

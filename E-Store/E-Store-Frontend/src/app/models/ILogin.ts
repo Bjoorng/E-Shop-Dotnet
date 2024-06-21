@@ -1,16 +1,18 @@
-import { Guid } from "guid-typescript";
+import { Guid } from 'guid-typescript';
 
 export interface ILoginRequest {
-  Username: string;
-  Password: string;
+  username: string;
+  password: string;
 }
-export interface ILoginResponse {
-  Id: Guid;
-  Username: string;
-  Role: string;
 
+export interface ILoginResponse {
+  id: Guid;
+  username: string;
+  role: string;
 }
+
 export interface ISessionUser {
-  Username: string;
-  Role: string;
+  id: Guid;
+  username: string;
+  role: string;
 }
