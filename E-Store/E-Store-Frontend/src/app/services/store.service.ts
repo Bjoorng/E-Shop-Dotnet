@@ -31,15 +31,6 @@ export class StoreService {
   }
 
   deleteStore(id: Guid): void {
-    this.http.delete<any>(`${this.baseUrl}stores/${id}`).pipe(
-      tap((response: any) => {
-        console.log('Store deleted successfully:', response);
-        this.getAllStores()
-      }),
-      catchError((error) => {
-        console.error('Failed to delete the store', error);
-        throw error;
-      })
-    ).subscribe();
+    this.http.delete<any>(`${this.baseUrl}stores/${id}`).subscribe();
   }
 }

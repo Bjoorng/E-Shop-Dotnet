@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ILoginRequest, ILoginResponse, ISessionUser } from '../models/ILogin';
 import { Observable, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -20,7 +20,7 @@ export class LoginService {
   login(user: ILoginRequest): Observable<ILoginResponse> {
     this.clearStorage();
     return this.http.post<ILoginResponse>(
-      this.baseUrl + 'users/login',
+      `${this.baseUrl}users/login`,
       user
     );
   }
