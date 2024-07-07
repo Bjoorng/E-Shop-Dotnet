@@ -1,5 +1,5 @@
-<div class="background">
-  <div class="container">
+  <div class="dialog-container">
+    <mat-icon class="close-icon" (click)="closeDialog()">close</mat-icon>
     <div class="title">Login to your account</div>
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="username">
@@ -32,4 +32,3 @@
       </button>
     </form>
   </div>
-</div>

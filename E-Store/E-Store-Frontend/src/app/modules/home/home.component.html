@@ -1,1 +1,16 @@
-<p>home works!</p>
+<h1>Welcome to the E-Shop Website</h1>
+
+<div class="container">
+  @if (allProducts == null) {
+    <div class="emptyList">
+      <p class="listText">Loading...</p>
+    </div>
+  }@else{
+    @for (product of allProducts; track $index) {
+      <div class="card">
+        <p>{{product.name}}</p>
+        <p>{{product.price}}</p>
+      </div>
+    }
+  }
+</div>

@@ -1,44 +1,41 @@
-.background {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+.dialog-container {
+  border-radius: 15px;
+  box-shadow: 1px 1px 15px #ffacac7d;
   position: relative;
-  .container {
-    border-radius: 15px;
-    box-shadow: 1px 1px 15px #ffacac7d;
+  .close-icon{
     position: absolute;
-    top: 200px;
-    .title {
-      font-size: 2rem;
-      background-color: #ffacac7d;
-      padding: 30px 20px 20px 20px;
-      text-align: center;
-      text-decoration: double;
+    top: 10px;
+    right: 10px;
+  }
+  .title {
+    font-size: 2rem;
+    background-color: #ffacac7d;
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    text-decoration: double;
+  }
+  .login-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px 20px 20px;
+    .username,
+    .password {
+      width: 100%;
     }
-    .login-form {
-      width: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 20px 20px 20px;
-      .username,
-      .password {
-        width: 100%;
-      }
-      .login-button {
-        padding: 20px 40px;
-        font-size: 1.3rem;
-        border: 2px solid #aaa;
-        box-shadow: 1px 1px 10px #ffacac7d;
-        background-color: #ffacac7d;
-      }
+    .login-button {
+      padding: 20px 40px;
+      font-size: 1.3rem;
+      border: 2px solid #aaa;
+      box-shadow: 1px 1px 10px #ffacac7d;
+      background-color: #ffacac7d;
     }
   }
 }
 
-::ng-deep .container{
+::ng-deep .container {
   .mdc-text-field {
     background-color: #fbf6f4 !important;
   }

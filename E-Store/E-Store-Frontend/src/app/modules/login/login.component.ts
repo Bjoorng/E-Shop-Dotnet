@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { Subscription } from 'rxjs';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent {
   constructor(
     private loginSVC: LoginService,
     private router: Router,
+    private dialog: MatDialogRef<LoginComponent>,
     private fb: FormBuilder
   ) {
     this.loginForm = fb.group({
@@ -39,25 +41,29 @@ export class LoginComponent {
   }
 
   ngOnDestroy(): void {
-    if(this.passwordValueSubscription){
+    if (this.passwordValueSubscription) {
       this.passwordValueSubscription.unsubscribe();
     }
   }
 
   onSubmit() {
-    if(this.loginForm.valid){
+    if (this.loginForm.valid) {
       this.loginSVC.login(this.loginForm.value).subscribe({
         next: (res) => {
           this.loginSVC.setSessionUser(res?.id, res?.username, res?.role);
-            console.log(res?.role.toUpperCase());
-          this.router.navigate(['/home']);
+          console.log(res?.role.toUpperCase());
+          this.dialog.close();
           window.location.reload();
-          //this.router.navigate(['/']);
         },
         error: (error) => {
           console.log('ERROR');
         },
-      })
+      });
     }
   }
+
+  closeDialog(){
+    this.dialog.close(false);
+  }
+
 }
